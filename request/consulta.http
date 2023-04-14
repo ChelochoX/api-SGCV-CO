@@ -1,0 +1,41 @@
+@api = http://localhost:3000/api/cliente
+@api1 = http://localhost:3000/api/pagadas
+
+@api2 = http://localhost:3000/api/abonadas
+
+@api3 = http://localhost:3000/api/pendientes
+
+###
+POST {{api}}
+Content-Type: application/json
+
+{
+  "cedula": "4513296",
+  "nombre_apellido":"DOMINGUEZ",
+  "direccion":"MORACUE TUPA",
+  "criteriobusqueda": 3
+}
+
+###
+GET {{api}}/4
+
+###
+GET {{api1}}/4
+
+###
+GET {{api2}}/0002972
+
+###
+GET {{api3}}/0000891
+
+###
+POST {{api3}}
+Content-Type: application/json
+
+{
+  "rangoCuotas": "1",
+  "nroFactura":"0000891",
+  "codigoCliente":16,
+  "montoPago": 150000,
+  "cobrador": "Cesar Lezcano"
+}
