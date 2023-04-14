@@ -2,13 +2,13 @@ import sql from 'mssql'
 import config from '../config'
 
 const dbSettings = {
-  user     : 'sa',
-  server   :  'DESKTOP-EPTCAVH',
-  database :  'lj comercial',
-  password : 'Cesar1983',
+  user     : config.dbUser,
+  server   : config.dbServer,
+  database : config.dbDatabase,
+  password : config.dbPassword,
   dialect : 'mssql',
   dialectOptions : {
-    instanceName : 'SQL08R2'
+    instanceName : config.dbInstanceName
   },
   options : {
     encrypt : false,

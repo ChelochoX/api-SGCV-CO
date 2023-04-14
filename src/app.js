@@ -7,6 +7,8 @@ const app = express()
 //settings
 app.set('port', config.port || 4000)
 //middlewares
+app.use(cors());
+app.use(morgan("dev"));
 app.use(express.json()); //permite a express recibir json
 app.use(express.urlencoded({extended:false})); //permite a express recibir formulario html
 
