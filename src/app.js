@@ -1,8 +1,10 @@
-import express from 'express'
-import config from './config'
-import cuentasClienteRoutes from './routes/consulta-cobranza.routes'
+import express from 'express';
+import config from './config';
+import cuentasClienteRoutes from './routes/consulta-cobranza.routes';
+const cors = require('cors');
+const morgan =require('morgan');
 
-const app = express()
+const app = express();
 
 //settings
 app.set('port', config.port || 4000)
