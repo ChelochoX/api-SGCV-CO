@@ -5,6 +5,8 @@
 
 @api3 = http://localhost:3000/api/pendientes
 
+@prueba = https://gestioncobranza.up.railway.app/api/cliente
+
 ###
 POST {{api}}
 Content-Type: application/json
@@ -18,6 +20,8 @@ Content-Type: application/json
 
 ###
 GET {{api}}/4
+### para probar desde produccion
+GET {{prueba}}/4
 
 ###
 GET {{api1}}/4

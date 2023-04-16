@@ -7,9 +7,9 @@ const dbSettings = {
   database : config.dbDatabase,
   password : config.dbPassword,
   dialect : 'mssql',
-  dialectOptions : {
+  /*dialectOptions : {
     instanceName : config.dbInstanceName
-  },
+  },*/
   options : {
     encrypt : false,
     trustServerCertificate: true,
