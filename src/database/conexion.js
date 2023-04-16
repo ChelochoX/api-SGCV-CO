@@ -11,12 +11,9 @@ const dbSettings = {
     //instanceName : config.dbInstanceName
     options: {
       encrypt: true,
-    },
-  },
-  options: {
-    encrypt: false,
-    trustServerCertificate: true,
-  },
+      trustServerCertificate: true
+    }
+  }
 };
 
 export async function getConnection(){
