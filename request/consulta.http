@@ -17,11 +17,21 @@ Content-Type: application/json
   "direccion":"MORACUE TUPA",
   "criteriobusqueda": 3
 }
+### PRUEBA DESDE PRODUCCION
+POST {{prueba}}
+Content-Type: application/json
+
+{
+  "cedula": "4513296",
+  "nombre_apellido":"DOMINGUEZ",
+  "direccion":"MORACUE TUPA",
+  "criteriobusqueda": 1
+}
 
 ###
 GET {{api}}/4
 ### para probar desde produccion
-##GET {{prueba}}/4
+GET {{prueba}}/4
 
 ###
 GET {{api1}}/4

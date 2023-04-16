@@ -1,5 +1,5 @@
-import sql from "mssql/msnodesqlv8";
-import config from '../config'
+const sql = require("msnodesqlv8");
+import config from "../config";
 
 const dbSettings = {
   user: config.dbUser,
@@ -14,18 +14,18 @@ const dbSettings = {
       encrypt: true,
       trustServerCertificate: true,
       trustedConnection: true,
-      useUTC: true
+      useUTC: true,
     },
   },
 };
 
-export async function getConnection(){
+export async function getConnection() {
   try {
-    const pool = await sql.connect(dbSettings)
-    return pool
+    const pool = await sql.connect(dbSettings);
+    return pool;
   } catch (error) {
-    console.error(error)
+    console.error(error);
   }
-};
+}
 
-export default { sql }
+export default { sql };
