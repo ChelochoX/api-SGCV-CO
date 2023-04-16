@@ -14,7 +14,7 @@ const dbSettings = {
       encrypt: true,
       trustServerCertificate: true,
       trustedConnection: true,
-      useUTC: true,
+      useUTC: true
     },
   },
 };
