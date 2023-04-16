@@ -1,4 +1,4 @@
-import sql from 'mssql'
+import sql from "mssql";
 import config from '../config'
 
 const dbSettings = {
@@ -7,13 +7,14 @@ const dbSettings = {
   database: config.dbDatabase,
   password: config.dbPassword,
   dialect: "mssql",
+  port: '1433',
   dialectOptions: {
     //instanceName : config.dbInstanceName
     options: {
       encrypt: true,
-      trustServerCertificate: true
-    }
-  }
+      trustServerCertificate: true,
+    },
+  },
 };
 
 export async function getConnection(){

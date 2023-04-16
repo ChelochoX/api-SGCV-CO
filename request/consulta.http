@@ -21,7 +21,7 @@ Content-Type: application/json
 ###
 GET {{api}}/4
 ### para probar desde produccion
-GET {{prueba}}/4
+##GET {{prueba}}/4
 
 ###
 GET {{api1}}/4
