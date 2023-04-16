@@ -1,4 +1,4 @@
-import sql from "mssql";
+import sql from "mssql/msnodesqlv8";
 import config from '../config'
 
 const dbSettings = {
@@ -13,6 +13,8 @@ const dbSettings = {
     options: {
       encrypt: true,
       trustServerCertificate: true,
+      trustedConnection: true,
+      useUTC: true,
     },
   },
 };
