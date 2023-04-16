@@ -2,18 +2,21 @@ import sql from 'mssql'
 import config from '../config'
 
 const dbSettings = {
-  user     : config.dbUser,
-  server   : config.dbServer,
-  database : config.dbDatabase,
-  password : config.dbPassword,
-  dialect : 'mssql',
-  /*dialectOptions : {
-    instanceName : config.dbInstanceName
-  },*/
-  options : {
-    encrypt : false,
+  user: config.dbUser,
+  server: config.dbServer,
+  database: config.dbDatabase,
+  password: config.dbPassword,
+  dialect: "mssql",
+  dialectOptions: {
+    //instanceName : config.dbInstanceName
+    options: {
+      encrypt: true,
+    },
+  },
+  options: {
+    encrypt: false,
     trustServerCertificate: true,
-  }
+  },
 };
 
 export async function getConnection(){
