@@ -7,7 +7,7 @@ const dbSettings = {
   database: config.dbDatabase,
   password: config.dbPassword,
   dialect: "mssql",
-  port: '1433',
+  port: 1433,
   dialectOptions: {
     //instanceName : config.dbInstanceName
     options: {
