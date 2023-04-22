@@ -17,5 +17,4 @@ app.use(express.urlencoded({extended:false})); //permite a express recibir formu
 //para usar las rutas
 app.use("/api",cuentasClienteRoutes);
 
-
 export default app;
