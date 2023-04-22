@@ -1,4 +1,4 @@
-const sql = require("msnodesqlv8");
+const sql = require("mssql");
 import config from "../config";
 
 const dbSettings = {
@@ -7,7 +7,7 @@ const dbSettings = {
   database: config.dbDatabase,
   password: config.dbPassword,
   dialect: "mssql",
-  port: 1433,
+  //port: 1433,
   dialectOptions: {
     //instanceName : config.dbInstanceName
     options: {
