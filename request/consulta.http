@@ -5,7 +5,7 @@
 
 @api3 = http://localhost:3000/api/pendientes
 
-@prueba = https://gestioncobranza.up.railway.app/api/cliente
+@prueba = https://cobranza.vercel.app/api/cliente
 
 ###
 POST {{api}}
