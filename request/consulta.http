@@ -1,11 +1,9 @@
-@api = http://localhost:3000/api/cliente
-@api1 = http://localhost:3000/api/pagadas
+@api = http://127.0.0.1:3000/api/cliente/datos
+@api1 = http://127.0.0.1:3000/api/pagadas
 
-@api2 = http://localhost:3000/api/abonadas
+@api2 = http://127.0.0.1:3000/api/abonadas
 
-@api3 = http://localhost:3000/api/pendientes
-
-@prueba = https://cobranza.vercel.app/api/cliente
+@api3 = http://127.0.0.1:3000/api/cliente/cuota/cobro/
 
 ###
 POST {{api}}
@@ -13,25 +11,13 @@ Content-Type: application/json
 
 {
   "cedula": "4513296",
-  "nombre_apellido":"DOMINGUEZ",
+  "nombre_apellido":"LEZCANO",
   "direccion":"MORACUE TUPA",
-  "criteriobusqueda": 3
-}
-### PRUEBA DESDE PRODUCCION
-POST {{prueba}}
-Content-Type: application/json
-
-{
-  "cedula": "4513296",
-  "nombre_apellido":"DOMINGUEZ",
-  "direccion":"MORACUE TUPA",
-  "criteriobusqueda": 1
+  "criteriobusqueda": 2
 }
 
 ###
 GET {{api}}/4
-### para probar desde produccion
-GET {{prueba}}/4
 
 ###
 GET {{api1}}/4

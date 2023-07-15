@@ -7,22 +7,24 @@ export const cliente = async (req, res) => {
   //settings
   let criterio_query
   let parametro_entrada
+  const criteriobusquedaNumber = parseInt(criteriobusqueda);
+
   if (!cedula & !nombre_apellido & !direccion & !criteriobusqueda)
   {
     return res.status(400).json({msg: "Ninguno de los parametros de entrada tiene datos"});
   }
-  if (criteriobusqueda === 1){
-     criterio_query = queries.consultaxcedula;
-     parametro_entrada = cedula;
+  if (criteriobusquedaNumber === 1) {
+    criterio_query = queries.consultaxcedula;
+    parametro_entrada = cedula;
   }
   // criterio 2 busqueda por nombre-apellido
-  if (criteriobusqueda === 2) {
-    criterio_query    = queries.consultaxnombre;
-    parametro_entrada = "'%"+nombre_apellido+"%'";
+  if (criteriobusquedaNumber === 2) {
+    criterio_query = queries.consultaxnombre;
+    parametro_entrada = "'%" + nombre_apellido + "%'";
   }
   //criterio 3 busqueda por direccion
-  if (criteriobusqueda === 3) {
-    criterio_query    = queries.consultaxdireccion;
+  if (criteriobusquedaNumber === 3) {
+    criterio_query = queries.consultaxdireccion;
     parametro_entrada = "'%" + direccion + "%'";
   }
 
@@ -38,7 +40,7 @@ try {
   res.send(error.message)
 }
 };
-//BUSCAMOS FACTURAS POR POR PAGAR POR CODIGO DE CLIENTE
+//BUSCAMOS FACTURAS POR PAGAR POR CODIGO DE CLIENTE
 export const cuentasPorPagarPorCodigo = async (req,res) => {
   const { id } = req.params;
   //settings
