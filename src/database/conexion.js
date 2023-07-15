@@ -1,48 +1,43 @@
 const sql = require("mssql");
 import config from "../config";
 
-/*const dbSettings = {
-  user: config.dbUser,
-  server: config.dbServer,
-  database: config.dbDatabase,
-  password: config.dbPassword,
-  dialect: "mssql",
-  //port: 1433,
-  dialectOptions: {
-    instanceName: config.dbInstanceName,
-    options: {
-      encrypt: false,
-      trustServerCertificate: true,
-      ssl: {
-        ciphers: "TLSv1.2",
+if (
+  config.enviroment === "Desarrollo" &&
+  config.DB_INSTANCIA === "Cloud"
+) {
+  const dbSettings = {
+    user: config.dbUser,
+    server: config.dbServer,
+    database: config.dbDatabase,
+    password: config.dbPassword,
+    dialect: "mssql",
+    port: 1433,
+    dialectOptions: {
+      instanceName: config.dbInstanceName,
+      options: {
+        encrypt: false,
+        trustServerCertificate: true,
+        ssl: {
+          ciphers: "TLSv1.2",
+        },
+        trustedConnection: true,
+        useUTC: true
       },
-      //trustedConnection: true,
-      //useUTC: true,
     },
-  },
-};*/
-
-/*const dbSettings = {
-  user: "chelo",
-  password: "Cesar?1983",
-  server: "DESKTOP-EPTCAVH",
-  database: "LJ_COMERCIAL",
-  port: 1433, // El puerto predeterminado de SQL Server es 1433
-  instanceName: "SQL08R2",
-  encrypt: false
-};*/
-
-const dbSettings = {
-  user: config.dbUser,
-  password: config.dbPassword,
-  server: config.dbServer,
-  database: config.dbDatabase,
-  port: 1433,
-  instanceName: config.dbInstanceName,
-  encrypt: false,
-};
-
-
+  };
+}
+elsif(config.enviroment === "Desarrollo" && config.DB_INSTANCIA === "Local");
+{
+  const dbSettings = {
+    user: config.dbUser,
+    password: config.dbPassword,
+    server: config.dbServer,
+    database: config.dbDatabase,
+    port: 1433,
+    instanceName: config.dbInstanceName,
+    encrypt: false,
+  };
+}
 
 export async function getConnection() {
   try {
